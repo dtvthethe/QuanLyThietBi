@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,8 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServices\ICategoryService.cs" />
+    <Compile Include="IServices\IDepartmentService.cs" />
+    <Compile Include="IServices\IProviderService.cs" />
+    <Compile Include="IServices\IRoleService.cs" />
+    <Compile Include="IServices\IStatusService.cs" />
+    <Compile Include="IServices\IUnitService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\DepartmentService.cs" />
+    <Compile Include="Services\ProviderService.cs" />
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\UnitService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLyThietBi.Data\QuanLyThietBi.Data.csproj">

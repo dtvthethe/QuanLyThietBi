@@ -8,5 +8,15 @@ namespace QuanLyThietBi.Data.IRepositories
         public RoleRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
+
+        /// <summary>
+        /// Get record by ID type of String
+        /// </summary>
+        /// <param name="id">Id Role</param>
+        /// <returns>Record type of Role</returns>
+        public Role GetById(string id)
+        {
+            return DbContext.Roles.Find(id);
+        }
     }
 }

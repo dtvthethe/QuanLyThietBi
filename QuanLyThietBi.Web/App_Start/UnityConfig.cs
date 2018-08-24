@@ -49,14 +49,26 @@ namespace QuanLyThietBi.Web
 
 
 
-            
+
             container.RegisterSingleton<IDbFactory, DbFactory>();
 
             container.RegisterType<IUnitOfWork, UnitOfWork>();
 
+
+
             container.RegisterType<ICategoryRepository, CategoryRepository>();
+            container.RegisterType<IRoleRepository, RoleRepository>();
+            container.RegisterType<IUnitRepository, UnitRepository>();
+            container.RegisterType<IProviderRepository, ProviderRepository>();
+            container.RegisterType<IStatusRepository, StatusRepository>();
+            container.RegisterType<IDepartmentRepository, DepartmentRepository>();
 
             container.RegisterType<ICategoryService, CategoryService>();
+            container.RegisterType<IRoleService, RoleService>();
+            container.RegisterType<IUnitService, UnitService>();
+            container.RegisterType<IProviderService, ProviderService>();
+            container.RegisterType<IStatusService, StatusService>();
+            container.RegisterType<IDepartmentService, DepartmentService>();
 
 
         }
