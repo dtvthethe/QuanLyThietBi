@@ -219,6 +219,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UnitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -252,6 +253,11 @@
     <Content Include="Areas\Admin\Views\Role\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Role\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Unit\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Unit\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Unit\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Unit\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Unit\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
