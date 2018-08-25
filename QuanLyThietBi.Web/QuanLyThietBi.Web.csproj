@@ -218,6 +218,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProviderController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Controllers\StatusController.cs" />
@@ -270,6 +271,11 @@
     <Content Include="Areas\Admin\Views\Provider\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Provider\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Provider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
