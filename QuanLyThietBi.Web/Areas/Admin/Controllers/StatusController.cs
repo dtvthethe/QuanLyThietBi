@@ -1,122 +1,129 @@
-﻿using QuanLyThietBi.Model.Models;
-using QuanLyThietBi.Service.IServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using QuanLyThietBi.Data;
+using QuanLyThietBi.Model.Models;
+using QuanLyThietBi.Service.IServices;
 
 namespace QuanLyThietBi.Web.Areas.Admin.Controllers
 {
-    public class UnitController : Controller
+    public class StatusController : Controller
     {
-        private readonly IUnitService _unitService;
+        private readonly IStatusService _statusService;
 
-        public UnitController(IUnitService unitService)
+        public StatusController(IStatusService statusService)
         {
-            _unitService = unitService;
+            _statusService = statusService;
         }
 
-        // GET: Admin/Unit
+        // GET: Admin/Status
         public ActionResult Index()
         {
-            return View(_unitService.GetAll().ToList());
+            return View(_statusService.GetAll().ToList());
         }
 
-        // GET: Admin/Unit/Details/5
+        // GET: Admin/Status/Details/5
         public ActionResult Details(int id = 0)
         {
             if (id <= 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Unit unit = _unitService.GetById(id);
-            if (unit == null)
+            Status status = _statusService.GetById(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(unit);
+            return View(status);
         }
 
-        // GET: Admin/Unit/Create
+        // GET: Admin/Status/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Unit/Create
+        // POST: Admin/Status/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name")] Unit unit)
+        public ActionResult Create([Bind(Include = "ID,Name")] Status status)
         {
             if (ModelState.IsValid)
             {
-                _unitService.Add(unit);
-                _unitService.SaveChanges();
+                _statusService.Add(status);
+                _statusService.SaveChanges();
 
                 return RedirectToAction("Index");
             }
 
-            return View(unit);
+            return View(status);
         }
 
-        // GET: Admin/Unit/Edit/5
+        // GET: Admin/Status/Edit/5
         public ActionResult Edit(int id = 0)
         {
             if (id <= 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Unit unit = _unitService.GetById(id);
-            if (unit == null)
+            Status status = _statusService.GetById(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(unit);
+            return View(status);
         }
 
-        // POST: Admin/Unit/Edit/5
+        // POST: Admin/Status/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name")] Unit unit)
+        public ActionResult Edit([Bind(Include = "ID,Name")] Status status)
         {
             if (ModelState.IsValid)
             {
-                var un = _unitService.GetById(unit.ID);
-                un.Name = unit.Name;
+                var stat = _statusService.GetById(status.ID);
+                stat.Name = status.Name;
 
-                _unitService.Update(un);
-                _unitService.SaveChanges();
+                _statusService.Update(stat);
+                _statusService.SaveChanges();
+
 
                 return RedirectToAction("Index");
             }
-            return View(unit);
+            return View(status);
         }
 
-        // GET: Admin/Unit/Delete/5
+        // GET: Admin/Status/Delete/5
         public ActionResult Delete(int id = 0)
         {
             if (id <= 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Unit unit = _unitService.GetById(id);
-            if (unit == null)
+            Status status = _statusService.GetById(id);
+            if (status == null)
             {
                 return HttpNotFound();
             }
-            return View(unit);
+            return View(status);
         }
 
-        // POST: Admin/Unit/Delete/5
+        // POST: Admin/Status/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            _unitService.Delete(id);
-            _unitService.SaveChanges();
+            _statusService.Delete(id);
+            _statusService.SaveChanges();
 
             return RedirectToAction("Index");
         }
